@@ -61,6 +61,13 @@ sub format_duration {
 =head1 DESCRIPTION
 
 
+=head1 METHODS
+
+=head2 new
+
+=head2 format_duration($dur_obj) => str
+
+
 =head1 SEE ALSO
 
 L<DateTime::Format::ISO8601> to format L<DateTime> object into ISO8601 date/time
