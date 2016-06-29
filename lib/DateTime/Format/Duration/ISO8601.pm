@@ -28,7 +28,11 @@ sub format_duration {
 
     $S += $ns / 1_000_000_000;
 
+    my $has_date = $y || $m || $w || $d;
     my $has_time = $H || $M || $S;
+
+    return "PT0H0M0S" if !$has_date && !$has_time;
+
     join(
         "",
         "P",
