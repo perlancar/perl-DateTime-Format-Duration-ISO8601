@@ -1,5 +1,3 @@
-Revision history for DateTime-Format-Duration-ISO8601
-
 0.002   2016-06-29 (PERLANCAR)
 
 	- [Bugfix] Handle zero duration correctly, it should not be
