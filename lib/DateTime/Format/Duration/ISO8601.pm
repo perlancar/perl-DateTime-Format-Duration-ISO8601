@@ -146,6 +146,8 @@ sub _error {
 1;
 # ABSTRACT: Format DateTime::Duration object as ISO8601 duration string
 
+=for Pod::Coverage ^(parse_duration_as_deltas)$
+
 =head1 SYNOPSIS
 
  use DateTime::Format::Duration::ISO8601;
@@ -171,9 +173,9 @@ ISO 8601 intervals are B<not> supported.
 
 =head3 Arguments
 
-=over 4
+=over
 
-=item on_error (C<CODE>, optional)
+=item * on_error (C<CODE>, optional)
 
 Subroutine reference that will receive an error message if parsing fails.
 
@@ -181,9 +183,12 @@ The default implementation simply C<die>s with the message.
 
 Set to C<undef> to disable error dispatching.
 
-=head2 format_duration(C<DateTime::Duration>) => C<string>
+=back
 
-=head2 parse_duration(C<string>) => C<DateTime::Duration>
+=head2 format_duration (C<DateTime::Duration>) => C<string>
+
+=head2 parse_duration (C<string>) => C<DateTime::Duration>
+
 
 =head1 SEE ALSO
 
