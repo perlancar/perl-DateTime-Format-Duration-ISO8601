@@ -13,7 +13,7 @@ my $f = DateTime::Format::Duration::ISO8601->new;
 is($f->format_duration(DateTime::Duration->new()), "PT0H0M0S", 'empty duration');
 is($f->format_duration(DateTime::Duration->new(years=>1)), "P1Y", 'one year');
 is($f->format_duration(DateTime::Duration->new(hours=>2)), "PT2H", 'two hours');
-is($f->format_duration(DateTime::Duration->new(years=>1, months=>2, weeks=>2, days=>7+4, hours=>5, minutes=>6, seconds=>7, nanoseconds=>800_000_000)), "P1Y2M3W4DT5H6M7.8S", 'all duration fields');
+is($f->format_duration(DateTime::Duration->new(years=>1, months=>2, weeks=>2, days=>7+4, hours=>5, minutes=>6, seconds=>7, nanoseconds=>800_000_000)), "P1Y2M25DT5H6M7.8S", 'all duration fields');
 
 eval { $f->format_duration("123") };
 ok $@ =~ m[not a DateTime::Duration instance], 'invalid dt arg';

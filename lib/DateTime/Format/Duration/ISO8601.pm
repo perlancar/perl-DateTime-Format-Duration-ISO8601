@@ -40,6 +40,7 @@ sub format_duration {
     );
 
     $S += $ns / 1_000_000_000;
+    $d += $w * 7;
 
     my $has_date = $y || $m || $w || $d;
     my $has_time = $H || $M || $S;
@@ -51,7 +52,6 @@ sub format_duration {
         "P",
         ($y, "Y") x !!$y,
         ($m, "M") x !!$m,
-        ($w, "W") x !!$w,
         ($d, "D") x !!$d,
         (
             "T",
