@@ -1,6 +1,6 @@
-0.003   unreleased (hatsuseno)
+0.003   2017-07-20 (PERLANCAR)
 
-    - [Feature] Support parsing of durations
+	- Add support for duration parsing (thanks Rudolf Leermakers).
 
 
 0.002   2016-06-29 (PERLANCAR)
@@ -11,4 +11,4 @@
 
 0.001   2016-06-29 (PERLANCAR)
 
-    - First release.
+        - First release.
