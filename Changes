@@ -1,3 +1,8 @@
+0.003   unreleased (hatsuseno)
+
+    - [Feature] Support parsing of durations
+
+
 0.002   2016-06-29 (PERLANCAR)
 
 	- [Bugfix] Handle zero duration correctly, it should not be
@@ -6,4 +11,4 @@
 
 0.001   2016-06-29 (PERLANCAR)
 
-        - First release.
+    - First release.
