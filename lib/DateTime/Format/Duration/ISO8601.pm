@@ -116,7 +116,7 @@ sub parse_duration_as_deltas {
         (?:T
             (?:(?<hours>[0-9]+)H)?
             (?:(?<minutes>[0-9]+)M)?
-            (?:(?<seconds>[0-9]+(?:\.([0-9]+)?))S)?
+            (?:(?<seconds>[0-9]+(?:\.([0-9]+))?)S)?
         )?
         $
     };
@@ -138,7 +138,7 @@ sub parse_duration_as_deltas {
 sub _error {
     my ($self, @args) = @_;
 
-    return unless ref $self->{ on_error } eq 'CODE';
+    die @args unless ref $self and ref $self->{ on_error } eq 'CODE';
 
     return $self->{ on_error }->(@args);
 }

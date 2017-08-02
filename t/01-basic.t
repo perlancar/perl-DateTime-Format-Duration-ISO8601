@@ -35,6 +35,9 @@ is $d->months, 1, 'modular months';
 is $d->hours, 1, 'minutes overflow';
 is $d->hours, 1, 'modular minutes';
 
+$d = $f->parse_duration('PT0S');
+is $d->seconds, 0, 'seconds parsed';
+
 eval { $f->parse_duration('abc') };
 ok $@ =~ m[abc.*not a valid], 'parse failure error message';
 
