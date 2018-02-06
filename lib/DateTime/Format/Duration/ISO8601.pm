@@ -76,6 +76,11 @@ sub parse_duration {
         ));
     }
 
+    # Convert weeks to days
+    if (exists $duration_args->{ weeks }) {
+        $duration_args->{days} += delete($duration_args->{weeks}) * 7;
+    }
+
     # Convert ss.sss floating seconds to seconds and nanoseconds
     if (exists $duration_args->{ seconds }) {
         my ($seconds, $floating) = $duration_args->{ seconds } =~ qr{(?x)
@@ -109,17 +114,24 @@ sub parse_duration_as_deltas {
 
     my $regex = qr{(?x)
         ^
-        (?:(?<repeats>R(?<repetitions>[0-9]+)?))?
+        (?:(?<repeats>R(?<repetitions>[0-9]+(?:\.[0-9]*)?)?))?
         P
-        (?:(?<years>[0-9]+)Y)?
-        (?:(?<months>[0-9]+)M)?
-        (?:(?<days>[0-9]+)D)?
-        (?:T
-            (?:(?<hours>[0-9]+)H)?
-            (?:(?<minutes>[0-9]+)M)?
-            (?:(?<seconds>[0-9]+(?:\.([0-9]+))?)S)?
-        )?
-        $
+        # just week (PnW)
+        (?:
+            (?:
+                (?:(?<weeks>[0-9]+(?:\.[0-9]*)?)W)
+            )|
+            (?:
+                (?:(?<years>[0-9]+(?:\.[0-9]*)?)Y)?
+                (?:(?<months>[0-9]+(?:\.[0-9]*)?)M)?
+                (?:(?<days>[0-9]+(?:\.[0-9]*)?)D)?
+                (?:T
+                    (?:(?<hours>[0-9]+(?:\.[0-9]*)?)H)?
+                    (?:(?<minutes>[0-9]+(?:\.[0-9]*)?)M)?
+                    (?:(?<seconds>[0-9]+(?:\.[0-9]*)?)S)?
+                )?
+            )
+        )$
     };
 
     unless ($duration_string =~ $regex) {
