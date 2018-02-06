@@ -96,11 +96,6 @@ sub parse_duration {
         }
     }
 
-    # DateTime::Duration only accepts integer values
-    for my $field (keys %{ $duration_args }) {
-        $duration_args->{ $field } = int($duration_args->{ $field });
-    }
-
     require DateTime::Duration;
     return DateTime::Duration->new(%{ $duration_args });
 }
@@ -116,11 +111,13 @@ sub parse_duration_as_deltas {
         ^
         (?:(?<repeats>R(?<repetitions>[0-9]+(?:\.[0-9]*)?)?))?
         P
-        # just week (PnW)
         (?:
+            # PnW
             (?:
                 (?:(?<weeks>[0-9]+(?:\.[0-9]*)?)W)
-            )|
+            )
+            |
+            # PnYnMnDTnHnMnS & P<date>T<time>
             (?:
                 (?:(?<years>[0-9]+(?:\.[0-9]*)?)Y)?
                 (?:(?<months>[0-9]+(?:\.[0-9]*)?)M)?
@@ -144,6 +141,8 @@ sub parse_duration_as_deltas {
     my %fields = map  { $_ => $+{ $_ } }
                  grep { defined $+{ $_ } }
                       keys %+;
+
+    # XXX ISO standard only allows decimal fraction for the smallest unit
 
     return \%fields;
 }
