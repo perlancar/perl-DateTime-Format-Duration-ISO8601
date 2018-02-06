@@ -96,6 +96,7 @@ sub parse_duration {
         $duration_args->{ $field } = int($duration_args->{ $field });
     }
 
+    require DateTime::Duration;
     return DateTime::Duration->new(%{ $duration_args });
 }
 
