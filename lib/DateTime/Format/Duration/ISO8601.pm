@@ -147,8 +147,6 @@ sub _error {
 1;
 # ABSTRACT: Format DateTime::Duration object as ISO8601 duration string
 
-=for Pod::Coverage ^(parse_duration_as_deltas)$
-
 =head1 SYNOPSIS
 
  use DateTime::Format::Duration::ISO8601;
@@ -189,6 +187,11 @@ Set to C<undef> to disable error dispatching.
 =head2 format_duration (C<DateTime::Duration>) => C<string>
 
 =head2 parse_duration (C<string>) => C<DateTime::Duration>
+
+=head2 parse_duration_as_deltas(C<string>) => \%deltas
+
+This is for parsing a duration string into hash, without creating
+L<DateTime::Duration> object.
 
 
 =head1 SEE ALSO
