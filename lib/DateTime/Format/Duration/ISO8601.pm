@@ -156,7 +156,7 @@ sub _error {
 }
 
 1;
-# ABSTRACT: Format DateTime::Duration object as ISO8601 duration string
+# ABSTRACT: Parse and format ISO8601 duration
 
 =head1 SYNOPSIS
 
