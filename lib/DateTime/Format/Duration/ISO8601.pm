@@ -209,11 +209,11 @@ L<DateTime::Duration> object.
 
 =head1 SEE ALSO
 
-L<DateTime::Format::ISO8601> to parse L<DateTime> object into ISO8601 date/time
-string. At the time of this writing, there is no support to parse and format
-L<DateTime::Duration> object, hence this module. Also, there is no support to
-format DateTime object as ISO8601 date/time string; for that functionality use
-L<DateTime::Format::ISO8601::Format>.
+L<DateTime::Format::ISO8601> to parse ISO8601 date/time string into L<DateTime>
+object. At the time of this writing, there is no support to parse and format
+L<DateTime::Duration> object, hence this module you're reading. Also, there is
+no support to format DateTime object as ISO8601 date/time string; for that
+functionality use L<DateTime::Format::ISO8601::Format>.
 
 L<DateTime::Format::Duration> to format DateTime::Duration object using
 strftime-style formatting.
