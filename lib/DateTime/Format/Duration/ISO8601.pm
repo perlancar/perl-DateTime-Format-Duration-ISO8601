@@ -170,12 +170,14 @@ sub _error {
  my $d = $format->parse_duration('P1Y1M1DT1H1M1S');
  say $d->in_units('minutes'); # => 61
 
+
 =head1 DESCRIPTION
 
 This module formats and parses ISO 8601 durations to and from
 L<DateTime::Duration> instances.
 
 ISO 8601 intervals are B<not> supported.
+
 
 =head1 METHODS
 
@@ -207,9 +209,11 @@ L<DateTime::Duration> object.
 
 =head1 SEE ALSO
 
-L<DateTime::Format::ISO8601> to format L<DateTime> object into ISO8601 date/time
-string. At the time of this writing, there is no support to format
-L<DateTime::Duration> object, hence this module.
+L<DateTime::Format::ISO8601> to parse L<DateTime> object into ISO8601 date/time
+string. At the time of this writing, there is no support to parse and format
+L<DateTime::Duration> object, hence this module. Also, there is no support to
+format DateTime object as ISO8601 date/time string; for that functionality use
+L<DateTime::Format::ISO8601::Format>.
 
 L<DateTime::Format::Duration> to format DateTime::Duration object using
 strftime-style formatting.
