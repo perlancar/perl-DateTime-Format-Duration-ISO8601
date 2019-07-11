@@ -1,11 +1,11 @@
-0.008   2018-06-23 (PERLANCAR)
+0.008   2018-06-23  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- [doc] Fix sentence.
 
 
-0.007   2018-06-23 (PERLANCAR)
+0.007   2018-06-23  Released-By: PERLANCAR
 
 	- No functional changes.
 
@@ -14,7 +14,7 @@
 	- Tweak Abstract.
 
 
-0.006   2018-02-06 (PERLANCAR)
+0.006   2018-02-06  Released-By: PERLANCAR
 
         - Allow PnW [RT#124294].
 
@@ -27,28 +27,28 @@
           [RT#124293].
 
 
-0.005   2017-08-02 (PERLANCAR)
+0.005   2017-08-02  Released-By: PERLANCAR
 
 	- Fix parsing PT0S (RT#122682, thanks Pip Cet).
 
 
-0.004   2017-07-20 (PERLANCAR)
+0.004   2017-07-20  Released-By: PERLANCAR
 
 	- [Bugfix] Avoid mixing PnYnMnDTnHnMnS and PnW styles according to ISO
           8601 (Thanks Rudolf Leermakers).
 
 
-0.003   2017-07-20 (PERLANCAR)
+0.003   2017-07-20  Released-By: PERLANCAR
 
 	- Add support for duration parsing (thanks Rudolf Leermakers).
 
 
-0.002   2016-06-29 (PERLANCAR)
+0.002   2016-06-29  Released-By: PERLANCAR
 
 	- [Bugfix] Handle zero duration correctly, it should not be
 	  formatted as 'P' but 'PT0H0M0S'.
 
 
-0.001   2016-06-29 (PERLANCAR)
+0.001   2016-06-29  Released-By: PERLANCAR
 
         - First release.
